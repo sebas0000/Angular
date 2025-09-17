@@ -1,8 +1,10 @@
 
-<h1>Hello, {{ title() }}</h1>
-<p>Congratulations! Your app is running. 🎉</p>
+<h1>Hola tu color es: {{ title }}</h1>
+<p>Y tu medida es de alrededor de 100 {{descripcion}}</p>
 
 <button (click)="Togglevideojuegos()">videojuegos</button>
 <app-videojuego *ngIf="mostrarVideojuegos"></app-videojuego>
 <tenis></tenis>
 <pantalones></pantalones>
+<h3>Calidad de este angular</h3>
+<p>{{calidad}}</p>

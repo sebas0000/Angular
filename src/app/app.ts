@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common'; // ✅
-
+import { CommonModule } from '@angular/common';
+import { configuracion } from './models/configuracion'
 import { VideoJuegoComponent } from './videojuegos/videojuegos.component';
 import { TenisComponent } from './tenis/tenis.component';
 import { Pantalones } from './pantalones/pantalones';
@@ -13,10 +13,17 @@ import { Pantalones } from './pantalones/pantalones';
   styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('Angular');
+  public title = 'Angular';
+  public descripcion : string = ' Aplicacion de ejemplo'
   public mostrarVideojuegos: boolean = true;
-
+  public calidad: string;
+  constructor(){
+    this.title  = configuracion.color;
+    this.descripcion = configuracion.Medida
+    this.calidad = configuracion.calidad
+  }
   Togglevideojuegos(): void {
     this.mostrarVideojuegos = !this.mostrarVideojuegos;
   }
 }
+
