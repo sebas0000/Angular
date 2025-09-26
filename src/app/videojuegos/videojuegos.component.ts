@@ -7,21 +7,23 @@ import { Component,OnInit,DoCheck,OnDestroy } from "@angular/core";
 })
 export class VideoJuegoComponent{
     public titulo: string;
+    public titulosecreto: string;
     public listado: string;
     constructor(){
         this.titulo = 'Titulo secreto de videojuegos'
+        this.titulosecreto = 'Super Mario bros'
         this.listado = 'Listado de videojuegos'
     }
-    ngOnInit():void{
-        console.log('Se ejecuto el onInit')
-    }
-    ngDoCheck():void{
-        console.log('Se ejecuto el doCheck')
-    }
-    ngOnDestroy():void{
-        console.log('Se ejecuto el onDestroy')
-    }
+    // ngOnInit():void{
+    //     console.log('Se ejecuto el onInit')
+    // }
+    // ngDoCheck():void{
+    //     console.log('Se ejecuto el doCheck')
+    // }
+    // ngOnDestroy():void{
+    //     console.log('Se ejecuto el onDestroy')
+    // }
      mostrartitulo():void{
-        alert(this.titulo = 'King Of Fighters')
+        alert(this.titulosecreto = 'El titulo es: '+ this.titulosecreto)
     }
 }

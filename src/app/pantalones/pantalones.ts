@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './pantalones.html',
   standalone: true,
 })
-export class Pantalones {
+export class PantalonesComponent {
 }

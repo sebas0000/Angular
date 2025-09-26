@@ -1,6 +1,62 @@
-<h2>{{ marca }}</h2>
+<h2>{{ tienda }}</h2>
 
-<h3>Listado de marcas:</h3>
+<h3>Listado de marcas disponible:</h3>
+
 <ul>
-  <li *ngFor="let marca of marcas">{{ marca }}</li>
+  <li *ngFor="let marca of marcas; let i = index">
+    {{marca}}
+    <button (click)="deleteMarca(i)">Borrar</button>
+  </li>
+</ul>
+
+<p>¿Cual es el nombre de la marca a añadir?</p>
+<input type="text" [(ngModel)]="marca" (blur)="onBlur()" (keyup.enter)="getMarca()"/>
+<p>Marca: <strong>{{marca}}</strong></p>
+<button (click)="addMarca()">Añadir marca</button>
+
+<h3>Listado de tenis disponibles:</h3>
+<ul>  
+  @for (teni of tenis; track $index) {
+    @if (teni.cantidad > 0) {
+      <li [ngStyle]="{'list-style': 'none'}">
+        <strong>{{$index+1}}.-</strong>
+        <strong [class.precioAlto]="teni.precio >= 1300"
+                [ngClass]="{
+                  'fondo': teni.precio > 1500,
+                  'subrayado': teni.marca == 'Adidas'
+                }">
+          ${{teni.precio}}
+        </strong> 
+        {{teni.nombre}}
+        {{teni.color}}
+        <strong *ngIf="teni.precio <= 1750"> ¡EN OFERTA!</strong>
+      </li>
+    }
+    @else {
+            <li [ngStyle]="{'list-style': 'none'}">
+        <strong>{{$index+1}}.-</strong>
+        <strong [class.precioAlto]="teni.precio >= 1300"
+                [ngClass]="{
+                  'fondo': teni.precio > 1500,
+                  'subrayado': teni.nombre == 'Adidas'
+                }">
+          ${{teni.precio}}
+        </strong> 
+        {{teni.nombre}}
+        {{teni.color}}
+        <strong>{{$index+1}}.- ${{teni.precio}}</strong> {{teni.nombre}} {{teni.color}}<strong> ¡NO DISPONIBLE!</strong>
+      </li>
+    }
+  }
+  @switch (envio) {
+    @case (true) {
+      <h3>El envio es gratuito</h3>
+    }
+    @case (false) {
+      <h3>El envio tiene un costo adicional</h3>
+    }
+    @default {
+      <h3>No se especifico el envio</h3>
+    }
+  }
 </ul>

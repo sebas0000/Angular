@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.precioAlto{
+    color: rgb(205, 50, 50);
+    font-size: 26px;
+}
+.fondo{
+    background-color: turquoise;
+}
+.subrayado{
+    text-decoration: line-through;
+    color: violet;
+}           
