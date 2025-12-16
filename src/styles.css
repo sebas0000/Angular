@@ -9,4 +9,12 @@
 .subrayado{
     text-decoration: line-through;
     color: violet;
-}           
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a.activo {
+  border-bottom: 2px solid green;
+}

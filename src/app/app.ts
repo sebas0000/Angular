@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { configuracion } from './models/configuracion'
-import { VideoJuegoComponent } from './videojuegos/videojuegos.component';
-import { TenisComponent } from './tenis/tenis.component';
-import { PantalonesComponent } from './pantalones/pantalones';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+
 @Component({
   standalone: true,
   selector: 'app-root',
   imports: [
-    VideoJuegoComponent,  
-    TenisComponent,
-    PantalonesComponent, 
-    CommonModule
-    ],
-  templateUrl: './app.html',
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+  ],
+  templateUrl: './app.component.html',
   styleUrls: ['./app.css']
 })
 

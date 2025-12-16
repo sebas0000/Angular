@@ -1,1 +1,13 @@
 <h3>Pantalones</h3>
+
+@if (id == 0) {
+    <p>Estamos en la pagina de pantalones</p>
+}@else if (id == 1) {
+    <h3>escogio pantalones para caballero</h3>
+}@else if (id == 2) {
+    <h3>escogio pantalones para dama</h3>
+}@else if (id == 3) {
+    <h3>escogio pantalones para niña/niño</h3>
+}
+
+<button (click)="redirect()">Redirigir a tenis</button>
