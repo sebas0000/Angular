@@ -15,7 +15,7 @@
 
     <label for="email">Email</label>
     <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required><br><br>
-        <span *ngIf="email.touched && !email.valid">
+    <span *ngIf="email.touched && !email.valid">
         el email es obligatorio <br><br>
     </span>
 

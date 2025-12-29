@@ -4,3 +4,30 @@
 @else {
     <h2>No se muestra nada</h2>
 }
+
+<h2>Crear usuario</h2>
+<form #NewUser="ngForm" (ngSubmit)="onSubmit(NewUser)">
+    <p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required>    
+        @if(name.touched && !name.valid){
+            El nombre no es valido
+        }
+    </p>
+
+    <p>
+        <label for="email">Email</label>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="new_user.email" required>
+        @if(email.touched && !email.valid){
+            El trabajo no es valido
+        }
+    </p>
+
+    <input type="submit" value="Guardar usuario" [disabled]="!NewUser.form.valid">
+</form>
+
+@if (usuario_guardado) {
+    <h2>Usuario guardado exitosamente</h2>
+    <h3>{{usuario_guardado.name}}</h3>
+    <h3>{{usuario_guardado.email}}</h3>
+}
