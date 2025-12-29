@@ -11,3 +11,12 @@
 }
 
 <button (click)="redirect()">Redirigir a tenis</button>
+<br><br><br><br>
+
+<p>{{ fecha | date:'fullDate' }}</p>
+<p>{{ fecha | date:'dd/MM/yyyy' }}</p>
+
+<p>{{"minusculas" | uppercase}}</p>
+<p>{{"MAYUSCULAS" | lowercase}}</p>
+<p>Yenes sin poner el signo de yen {{"12"| currency:"JPY"}}</p>
+<p>Mi uso de pipe personalizado: <br> {{5 | Calculadora:2}}</p>

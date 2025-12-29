@@ -4,6 +4,7 @@ import { PantalonesComponent } from './pantalones/pantalones';
 import { VideoJuegoComponent } from './videojuegos/videojuegos.component';
 import { Home } from './home/home';
 import { Externo } from './externo/externo';
+import { Contacto } from './contacto/contacto';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'pantalones/:id', component: PantalonesComponent },
   { path: 'videojuegos', component: VideoJuegoComponent },
   { path: 'externo', component: Externo},
+  { path: 'contacto', component: Contacto},
   { path: '**', component: Home }
 ];
